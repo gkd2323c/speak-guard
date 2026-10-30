@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>说话提醒</title>
+  <link rel="stylesheet" href="./assets/panel.css">
+</head>
+<body>
+  <div class="sg-head">
+    <h1>说话提醒</h1>
+    <span class="sg-state" id="state" data-on="1">读取中</span>
+  </div>
+  <p class="sg-sub">工具调用之后若没有输出正文，就替主人提醒一句。</p>
+
+  <div class="sg-metrics">
+    <div class="sg-metric"><b id="m-steps">—</b><span>检查步数</span></div>
+    <div class="sg-metric"><b id="m-reminded">—</b><span>已提醒</span></div>
+    <div class="sg-metric"><b id="m-skipped">—</b><span>正常放行</span></div>
+    <div class="sg-metric"><b id="m-errors">—</b><span>出错</span></div>
+  </div>
+
+  <div class="sg-section">
+    <h2>当前配置</h2>
+    <div class="sg-row"><span class="k">提醒次数</span><span class="v">不限（每次都会提醒）</span></div>
+    <div class="sg-row"><span class="k">触发条件</span><span class="v">调用工具但无正文</span></div>
+    <div class="sg-row"><span class="k">提醒位置</span><span class="v">最后一条工具结果末尾</span></div>
+  </div>
+
+  <div class="sg-section">
+    <h2>判据自测</h2>
+    <p class="sg-sub" style="margin-bottom:8px">用一段构造的消息数组验证判据，只读，不影响真实会话。</p>
+    <div class="sg-actions">
+      <button id="btn-probe-hit" type="button">测「调工具没说话」</button>
+      <button id="btn-probe-miss" type="button">测「说过了」</button>
+      <button id="btn-refresh" type="button">刷新数据</button>
+      <button id="btn-reset" type="button">清零统计</button>
+    </div>
+    <div class="sg-verdict" id="verdict" hidden></div>
+  </div>
+
+  <div class="sg-section">
+    <h2>最近记录</h2>
+    <ul class="sg-list" id="recent"></ul>
+    <div class="sg-empty" id="recent-empty">还没有记录。连续调用工具且不说话时，这里会出现条目。</div>
+  </div>
+
+  <div class="sg-err" id="err" hidden></div>
+
+  <script>
+    window.addEventListener('error', function () {
+      var el = document.getElementById('err');
+      el.hidden = false;
+      el.textContent = '面板脚本出错，检查 App 资源或运行官方校验器。';
+    }, true);
+  </script>
+  <script type="module" src="./assets/panel.js"></script>
+</body>
+</html>

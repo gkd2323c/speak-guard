@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 2,
+  "id": "speak-guard",
+  "name": "说话提醒",
+  "description": "工具调用后没输出正文就补一句提醒：让模型在连续调工具时先告诉主人它在做什么。",
+  "version": "0.1.0",
+  "entry": "index.js",
+  "capabilities": [
+    "app/hooks.agent-pre-step"
+  ],
+  "contributes": {
+    "settings": {
+      "title": "说话提醒",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "启用提醒",
+            "description": "总开关。关闭后不再检查、也不再注入提醒。",
+            "default": true
+          },
+          "reminderText": {
+            "type": "string",
+            "title": "提醒文案",
+            "description": "追加到工具结果末尾的提醒内容。可用占位符：{tools} 为刚才调用的工具名。建议用 XML 标签包裹，模型能直接认出这是系统提示。",
+            "default": "<system-reminder source=\"speak-guard\">\n你刚调用过 {tools}，但这一轮还没有对用户说过话。用户此刻只看到一个转圈，不知道你在做什么。\n在继续调用工具之前，先用一两句话说明：刚才做了什么、接下来要做什么。\n</system-reminder>"
+          }
+        }
+      }
+    },
+    "cards": [
+      {
+        "id": "panel",
+        "title": "说话提醒",
+        "description": "提醒统计、最近记录与判据自测",
+        "route": "/panel.html",
+        "face": {
+          "image": "assets/cover.svg"
+        }
+      }
+    ]
+  },
+  "icon": "assets/icon.svg",
+  "minAppVersion": "1.5.7-beta"
+}

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b3a63"/>
+      <stop offset="100%" stop-color="#0d1f38"/>
+    </linearGradient>
+    <linearGradient id="whale" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5fc8f2"/>
+      <stop offset="100%" stop-color="#2a86c9"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#sea)"/>
+
+  <!-- 对话气泡：说出来的话 -->
+  <g opacity="0.95">
+    <rect x="52" y="46" width="152" height="88" rx="30" fill="#f5fbff" opacity="0.13"/>
+    <rect x="52" y="46" width="152" height="88" rx="30" fill="none" stroke="#8fd8f5" stroke-width="3" opacity="0.75"/>
+    <path d="M92 130 L86 158 L120 132 Z" fill="#8fd8f5" opacity="0.75"/>
+    <!-- 气泡里的三条话音 -->
+    <rect x="80" y="74" width="96" height="9" rx="4.5" fill="#8fd8f5"/>
+    <rect x="80" y="92" width="72" height="9" rx="4.5" fill="#8fd8f5" opacity="0.75"/>
+    <rect x="80" y="110" width="44" height="9" rx="4.5" fill="#8fd8f5" opacity="0.5"/>
+  </g>
+
+  <!-- 鲸鱼：抬头的鲸，尾鳍上扬 -->
+  <g transform="translate(0,10)">
+    <path d="M60 196
+             C60 168 86 150 122 150
+             C150 150 168 158 178 172
+             C170 178 162 180 154 178
+             C158 188 154 198 144 202
+             C130 208 106 208 88 202
+             C72 196 60 198 60 196 Z"
+          fill="url(#whale)"/>
+    <circle cx="118" cy="172" r="5.5" fill="#0d1f38"/>
+    <circle cx="119.6" cy="170.4" r="1.9" fill="#ffffff"/>
+    <path d="M138 190 C146 194 156 194 164 190" stroke="#0d1f38" stroke-width="3"
+          stroke-linecap="round" fill="none" opacity="0.55"/>
+    <!-- 尾鳍 -->
+    <path d="M60 196 C48 186 34 184 24 190 C34 198 44 206 58 206 Z" fill="url(#whale)"/>
+    <!-- 水柱 -->
+    <path d="M118 150 C114 136 118 126 128 120" stroke="#8fd8f5" stroke-width="4"
+          stroke-linecap="round" fill="none" opacity="0.6"/>
+    <circle cx="132" cy="116" r="4" fill="#8fd8f5" opacity="0.6"/>
+  </g>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#132a47"/>
+      <stop offset="55%" stop-color="#0d1f38"/>
+      <stop offset="100%" stop-color="#081524"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5fc8f2" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#5fc8f2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="whale" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6fd3f7"/>
+      <stop offset="100%" stop-color="#2a86c9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#bg)"/>
+
+  <!-- 水纹 -->
+  <g stroke="#5fc8f2" stroke-width="1.5" fill="none" opacity="0.16">
+    <path d="M0 420 Q120 400 240 420 T480 420 T720 420 T960 420"/>
+    <path d="M0 452 Q120 432 240 452 T480 452 T720 452 T960 452"/>
+    <path d="M0 484 Q120 464 240 484 T480 484 T720 484 T960 484"/>
+  </g>
+  <rect y="360" width="960" height="180" fill="url(#glow)" opacity="0.25"/>
+
+  <!-- 左侧标题 -->
+  <g>
+    <text x="72" y="196" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif"
+          font-size="66" font-weight="700" fill="#f2fbff" letter-spacing="2">说话提醒</text>
+    <text x="74" y="248" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif"
+          font-size="24" fill="#8fd8f5" letter-spacing="4">TOOL CALLS SHOULD SPEAK</text>
+
+    <rect x="72" y="286" width="76" height="4" rx="2" fill="#5fc8f2"/>
+
+    <text x="72" y="348" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif"
+          font-size="22" fill="#b9d8e8">每次工具调用之后</text>
+    <text x="72" y="386" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif"
+          font-size="22" fill="#b9d8e8">若没有输出正文，就补一句提醒</text>
+    <text x="72" y="424" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif"
+          font-size="22" fill="#6f96ad">别让主人盯着转圈猜你在干什么</text>
+  </g>
+
+  <!-- 右侧鲸鱼 + 气泡 -->
+  <g transform="translate(690,300)">
+    <g opacity="0.9">
+      <rect x="-118" y="-176" width="230" height="112" rx="40" fill="#f2fbff" opacity="0.12"/>
+      <rect x="-118" y="-176" width="230" height="112" rx="40" fill="none" stroke="#8fd8f5" stroke-width="2.5" opacity="0.6"/>
+      <path d="M-58 -66 L-70 -22 L-8 -62 Z" fill="#8fd8f5" opacity="0.6"/>
+      <rect x="-96" y="-152" width="150" height="12" rx="6" fill="#8fd8f5" opacity="0.9"/>
+      <rect x="-96" y="-126" width="112" height="12" rx="6" fill="#8fd8f5" opacity="0.65"/>
+      <rect x="-96" y="-100" width="70" height="12" rx="6" fill="#8fd8f5" opacity="0.4"/>
+    </g>
+
+    <path d="M-104 96
+             C-104 40 -56 6 12 6
+             C66 6 100 22 118 48
+             C104 60 88 64 72 60
+             C80 80 72 98 54 106
+             C28 118 -18 118 -52 106
+             C-82 96 -104 100 -104 96 Z"
+          fill="url(#whale)"/>
+    <circle cx="4" cy="48" r="10" fill="#0d1f38"/>
+    <circle cx="7" cy="44" r="3.4" fill="#ffffff"/>
+    <path d="M40 78 C56 86 76 86 92 78" stroke="#0d1f38" stroke-width="5"
+          stroke-linecap="round" fill="none" opacity="0.5"/>
+    <path d="M-104 96 C-128 76 -156 72 -176 84 C-156 100 -136 116 -108 116 Z" fill="url(#whale)"/>
+    <path d="M12 6 C4 -20 12 -40 32 -52" stroke="#8fd8f5" stroke-width="7"
+          stroke-linecap="round" fill="none" opacity="0.55"/>
+    <circle cx="40" cy="-60" r="7" fill="#8fd8f5" opacity="0.55"/>
+  </g>
+</svg>

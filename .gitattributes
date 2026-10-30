@@ -1,0 +1,18 @@
+# 行尾统一为 LF：仓库跨平台使用，不让检出机器的平台差异混进版本历史。
+* text=auto eol=lf
+
+# Windows 批处理必须保持 CRLF，cmd.exe 按 CRLF 解析。
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制文件不做行尾转换。
+*.png binary
+*.webp binary
+*.zip binary
+
+# 不进安装包的内容：仓库元数据与打包工具本身。
+/.gitignore     export-ignore
+/.gitattributes export-ignore
+/.github/       export-ignore
+/scripts/       export-ignore
+/dist/          export-ignore
