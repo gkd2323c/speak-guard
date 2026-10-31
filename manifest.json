@@ -24,7 +24,7 @@
             "type": "string",
             "title": "提醒文案",
             "description": "追加到工具结果末尾的提醒内容。可用占位符：{tools} 为刚才调用的工具名。建议用 XML 标签包裹，模型能直接认出这是系统提示。",
-            "default": "<system-reminder source=\"speak-guard\">\n你刚调用过 {tools}，但这一轮还没有对用户说过话。用户此刻只看到一个转圈，不知道你在做什么。\n在继续调用工具之前，先用一两句话说明：刚才做了什么、接下来要做什么。\n</system-reminder>"
+            "default": "<system-reminder source=\"speak-guard\">\n你在调用 {tools} 工具之前还没有对用户说话。用户此刻不知道你在做什么。\n在继续调用工具之前，先输出正文\n</system-reminder>"
           }
         }
       }
